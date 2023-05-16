@@ -16,7 +16,7 @@ if __name__ == "__main__":
     parser.add_argument("-luhn", "--luhn_algorithm",
                         help="Checking the card number using the Luhn algorithm")
     parser.add_argument("-stat", "--statistics",
-                        help="Gets stats about executing time with different number of processors", default=1)
+                        help="Gets stats about executing time with different number of processors")
     args = parser.parse_args()
     if args.get_card_numb:
         try:
