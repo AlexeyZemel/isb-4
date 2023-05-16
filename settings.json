@@ -2,5 +2,7 @@
     "hash":"data/hash.txt",
     "last_numbers":"data/last_numbs.txt",
     "bins":"data/bins.txt",
-    "card_number":"data/card_number.txt"   
+    "card_number":"data/card_number.txt",
+    "stats":"data/stats.csv",
+    "graph":"data/graph.jpg"
 }
