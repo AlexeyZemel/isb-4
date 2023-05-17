@@ -21,7 +21,7 @@ if __name__ == "__main__":
     if args.get_card_numb:
         try:
             hash = settings["hash"]
-            bins = settings["bins"].split(" ")
+            bins = settings["bins"]
             last_numbers = settings["last_numbers"]
             card_number = get_card_number(
                 hash, bins, last_numbers, args.get_card_numb)
@@ -42,7 +42,7 @@ if __name__ == "__main__":
     elif args.statistics:
         try:
             hash = settings["hash"]
-            bins = settings["bins"].split(" ")
+            bins = settings["bins"]
             last_four_numbers = settings["last_numbers"]
             for i in range(1, 9):
                 t1 = time.time()
