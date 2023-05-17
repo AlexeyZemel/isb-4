@@ -37,27 +37,6 @@ def write_file(data: str, file_name: str) -> None:
         raise err
 
 
-def read_list(file_name: str) -> list:
-    """Read the data in the file and writes it into list
-
-    Args:
-        file_name(str): name of the file
-
-    Returns:
-        list: list with the read data
-    """
-    data = []
-    try:
-        with open(file_name, "r") as f:
-            data = f.readlines()
-            data = list(map(int, data))
-        logging.info("Read the data successfuly")
-    except OSError as err:
-        logging.info("Read the data is failed")
-        raise err
-    return data
-
-
 def load_settings(json_file: str) -> dict:
     """Loads a settings file into the program.
 

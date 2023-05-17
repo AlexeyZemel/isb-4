@@ -20,9 +20,9 @@ if __name__ == "__main__":
     args = parser.parse_args()
     if args.get_card_numb:
         try:
-            hash = load_write.read_file(settings["hash"])
-            bins = load_write.read_list(settings["bins"])
-            last_numbers = load_write.read_file(settings["last_numbers"])
+            hash = settings["hash"]
+            bins = settings["bins"].split(" ")
+            last_numbers = settings["last_numbers"]
             card_number = get_card_number(
                 hash, bins, last_numbers, args.get_card_numb)
             if card_number:
@@ -41,9 +41,9 @@ if __name__ == "__main__":
             logging.info("Card number is wrong")
     elif args.statistics:
         try:
-            hash = load_write.read_file(settings["hash"])
-            bins = load_write.read_list(settings["bins"])
-            last_four_numbers = load_write.read_file(settings["last_numbers"])
+            hash = settings["hash"]
+            bins = settings["bins"].split(" ")
+            last_four_numbers = settings["last_numbers"]
             for i in range(1, 9):
                 t1 = time.time()
                 get_card_number(hash, bins, last_four_numbers, i)
