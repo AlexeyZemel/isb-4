@@ -29,7 +29,7 @@ def write_file(data: str, file_name: str) -> None:
         file_name(str): name of the file where to write
     """
     try:
-        with open(file_name, "w") as f:
+        with open(file_name, "a") as f:
             f.write(data)
         logging.info("Write the data successfully")
     except OSError as err:

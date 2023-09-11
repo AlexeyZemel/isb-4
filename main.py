@@ -36,8 +36,12 @@ if __name__ == "__main__":
     elif args.luhn_algorithm:
         card_number = load_write.read_file(settings["card_number"])
         if luhn(card_number):
+            load_write.write_file(
+                    " Luhn algorithm: true", settings["card_number"])
             logging.info("Card number is right")
         else:
+            load_write.write_file(
+                    " Luhn algorithm: false", settings["card_number"])
             logging.info("Card number is wrong")
     elif args.statistics:
         try:

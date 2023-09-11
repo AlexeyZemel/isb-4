@@ -4,6 +4,11 @@ import logging
 import multiprocessing as mp
 
 
+def reverse_number(n):
+    n = str(n)
+    return n[::-1]
+
+
 def check_hash(hash: str, card_number: str) -> bool:
     """Compares hash in the task with the hash of the card number
 
@@ -36,8 +41,12 @@ def get_card_number(
         int: card number or 0 if failed
     """
     args = []
+    for j in bins:
+        args.append((hash, f"{j}{000000}{last_numbs}"))
     for i in range(100000,1000000):
         for j in bins:
+            args.append((hash, f"{j}{i}{last_numbs}"))
+            i = reverse_number(i)
             args.append((hash, f"{j}{i}{last_numbs}"))
     with mp.Pool(processes=core_number) as p:
         for result in p.starmap(check_hash, tqdm(args, ncols=120, colour="green")):
